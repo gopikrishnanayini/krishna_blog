@@ -7,14 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="container">
+	<div class="navbar">
+	    <div class="navbar-inner">
+         <div class="container">
+          <h1><button type="button" class="btn btn-success"><%= link_to 'Krishna Blog', welcomes_path %></button></h1>
+          <button type="button" class="btn btn-primary"><%= link_to 'About Me', abouts_path %></button>
+          <button type="button" class="btn btn-primary"><%= link_to 'Blog', blogs_path %></button>
+           <button type="button" class="btn btn-primary"><%= link_to 'Contact Me', contacts_path %></button>
+          </div>
+            <div class="container">
+            
              <% if user_signed_in? %>
 		            Signed in as <%= current_user.email%>.Not you?
 		            <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
 		            <% else %>
 		            <%= link_to 'Sign up', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %>
             <% end %>
+            </div>
+        </div>
     </div>
+
      <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
@@ -22,3 +34,4 @@
 
 </body>
 </html>
+ 

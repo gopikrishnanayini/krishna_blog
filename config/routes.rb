@@ -1,11 +1,20 @@
 Rails.application.routes.draw do
+  get 'contacts/index'
+
+  get 'welcomes/index'
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
- root 'abouts#index'
+ root 'welcomes#index'
+ resources :welcomes 
+
   resources :abouts
+
+  resources :contacts
+
   resources :blogs do
     resources :comments
   end

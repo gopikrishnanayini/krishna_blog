@@ -1,3 +1,15 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul.comments {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+li.comments {
+  line-height: 22px;
+  padding: 3em 0em 4em 0em;
+  border-bottom: 1px solid #E9E9EA;
+}
